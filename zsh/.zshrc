@@ -116,3 +116,9 @@ alias tds='tmux detach -s'
 alias tns='tmux -2 new -s'
 
 # alias vim='/usr/local/bin/nvim.appimage'
+alias eks01="export KUBECONFIG=~/.kube/runai_eks01.yaml"
+alias eks02="export KUBECONFIG=~/.kube/runai_eks02.yaml"
+
+alias runai_delete="runai delete job"
+
+alias runai_project="runai config project"
