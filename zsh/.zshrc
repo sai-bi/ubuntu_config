@@ -119,6 +119,73 @@ alias tns='tmux -2 new -s'
 alias eks01="export KUBECONFIG=~/.kube/runai_eks01.yaml"
 alias eks02="export KUBECONFIG=~/.kube/runai_eks02.yaml"
 
-alias runai_delete="runai delete job"
+function print_runai_env() {
+    echo "KUBECONFIG: ${KUBECONFIG}"
+    echo "CLUSTER_NAME: ${CLUSTER_NAME}"
+    echo "NODE_POOL: ${NODE_POOL}"
+    echo "JACK_ID: ${JACK_ID}"
+    echo "DOCKER: ${DOCKER}"
+    echo "PROJ_NAME: ${PROJ_NAME}"
+}
 
+
+function use_eks01() {
+    export KUBECONFIG=~/.kube/runai_eks01.yaml
+    export CLUSTER_NAME=eks01
+    export NODE_POOL=a100-80gb-1
+    export JACK_ID=5684
+    export DOCKER=docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/runai/clio-base-beta:0.19
+    export PROJ_NAME=g3i-3dgentech
+
+    print_runai_env
+}
+
+function use_eks02() {
+    export KUBECONFIG=~/.kube/runai_eks02.yaml
+    export CLUSTER_NAME=eks02
+    export NODE_POOL=a100-1
+    export JACK_ID=5684
+    export DOCKER=docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/runai/clio-base-beta:0.19
+    export PROJ_NAME=g3i-3dgentech
+
+    print_runai_env
+
+}
+
+function use_eks03() {
+    export KUBECONFIG=~/.kube/runai_eks03.yaml
+    export CLUSTER_NAME=eks03
+    export NODE_POOL=h100-1
+    export JACK_ID=5684
+    export DOCKER=docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/kineto:0.0.15-h100-test6
+    export PROJ_NAME=g3i-3dgentech
+
+    print_runai_env
+
+}
+
+function use_eks04() {
+    export KUBECONFIG=~/.kube/runai_eks04.yaml
+    export CLUSTER_NAME=eks04
+    export NODE_POOL="a100-80gb-1,a100-80gb-2,a100-80gb-3"
+    export JACK_ID=5684
+    export DOCKER=docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/runai/clio-base-beta:0.19
+    export PROJ_NAME=g3i-3dgentech
+
+    print_runai_env
+
+}
+
+
+function list_all_jobs() {
+    echo "------------------------------------------------------------------"
+    runai list jobs -p ${PROJ_NAME} | grep  sbi
+}
+
+
+
+alias runai_delete="runai delete job"
 alias runai_project="runai config project"
+alias runai_3dgen="runai config project g3i-3dgentech"
+
+

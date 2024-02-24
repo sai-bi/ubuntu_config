@@ -15,7 +15,8 @@ fi
 mkdir -p ~/.kube
 cp runai_files/runai_eks01.yaml ~/.kube
 cp runai_files/runai_eks02.yaml ~/.kube
-
+cp runai_files/runai_eks03.yaml ~/.kube
+cp runai_files/runai_eks04.yaml ~/.kube
 
 
 

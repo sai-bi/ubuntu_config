@@ -1,0 +1,26 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJT0VMTTNZeXlqK2N3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TXpFd01Ua3hNVEExTURaYUZ3MHpNekV3TVRZeE1URXdNRFphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURtQ3o2SlMwZEErTzgxRzFzWGRlSC96T004TjFxdVo2Vk5nR1dlUlc5TlVHV1Vpd0lYSE5BazU4dVAKa0ZpQ3ZUb3pEV3pLeUZIY25qZTh4bkZLKzJJRlA2djlycllTejI5cXd4ZUNFTExXV3ltRHVURGdQVWNlM1pFeApHQXc1N2dSRVV3ZUF6Q3pEM0tiY2ZLRUNPK1oxSGg2RTN3UFAyWDUzcUpjd1lqU01xbkx2TW15cmVNWmRWREhSCmFWSlNzTnZMTXpwSUlBdzl3MEx3VGtENjh0b3h4dFRUZ20xTkQ1akp2a3lSUjN2SlAreW9RWERtVmlWUGxZcUwKaXRDT1VwbTNJc3B0b01tOHdkMk9rTlZaVEVxVng5SFdqVGNJbFdWdStvZThEbFRjUForWkZCM2Y1T1pyVk5ZawpSQkRHYzdtVENreU5GOFd3VVNkTGlOL2h4cHM3QWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTNG5lN201em5iVTRwRXZ4Y0Zad2dPL21uNVlqQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQkNvOGRXR3hsaApIUEUvR2RFenlzaVZ4RDgybUNmeGZsUGpHbnl5ZmlWUUNPUVRqOE1VMVNySUY3ZXdzTUpFWVF2MTgydXA2ODBjClU3djBSZm1uTFNOWkRWUjduRWVuODg4SE9ZcDhKbm9OcEhJQWhKSXQzclJiU0kvR2c3YkE4MFZFNG9GYkVpSW4KSTZNMDJWWHhRdmhiaGhaVmZiVGp2bzRqUTRrRlNGK2RwQkprUGZHUUhIVkM0QTdUTmlBZDFKMGF0S0ZHRU84Ugo4RjFwRndVbnRIVUtDYlRPaThuc2RuNE5Qc01mUHlVL09UcGx6dmx6MVQxZjZFNGkra0RmbDMrQmYrTERZeWE5CjgzcjdreEpmbWFLWUJGaHRoT25aekJ5eDZKRW93ZHNBVllCWHdGOUJQYlo4WWdadWlKTU5jY3gzM2h4OUdkQUoKWEgzbDFRNFRrSGJUCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://E7FAE7C2710A83BE814B02BB56F3EBD0.gr7.us-west-2.eks.amazonaws.com
+  name: arn:aws:eks:us-west-2:333190514293:cluster/sensei-eks03-prod-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:us-west-2:333190514293:cluster/sensei-eks03-prod-cluster
+    user: runai-authenticated-user
+  name: sensei-eks03-prod-cluster
+current-context: sensei-eks03-prod-cluster
+kind: Config
+preferences: {}
+users:
+- name: runai-authenticated-user
+  user:
+    auth-provider:
+      config:
+        airgapped: "true"
+        auth-flow: remote-browser
+        client-id: runai-cli
+        idp-issuer-url: https://app-ic.run.ai/auth/realms/adobesensei
+        realm: adobesensei
+        redirect-uri: https://adobesensei.run.ai/oauth-code
+      name: oidc

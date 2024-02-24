@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJQXN3UHNpTSttcEl3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TXpFeU1EVXhNekF6TURaYUZ3MHpNekV5TURJeE16QTRNRFphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUM1ZWVxcmdCaXRiTFpQcHdnWUc3T2tRaFlJWXQ0djhFQkFFMlpKakhtdERKVW1NL2dBY2JLWWFLOVUKMGtJbzhreHJBc0Joc2QxSjJNSE1YdTRGQWI1V0NGbEdpLzZKOGJHMUR2cFN5aVN6M3BVWk0wbXE1K0pZdUJNNApkU3NTMjljRFloeDZwMDhSWUFyenN3VHViaEtJNDFZNzFaalhzcjhic2lrcXhqbDZpMVZEbmJHVkVXYkJTem11Ck1TTGljaFNwc05qejN5Y1lTcEZ2Kzlnc3NUMnJ2Y1NldGdETWRqM0VvditZaWhEM0pUQUZSdVpvQnZVUWVLR0EKWkJvbm5Kek5aRWE2TUpWNVdSdUhaMTRWMVE5UE52VklNSGd4Qk9LdTI2dUlWaVc3dUJ2N29sWlg1Qis5cFBFNApaMnRWRzREaHl0ZUtsalVMaUNIMVRTOGhVYTVWQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTYVVQV1R5ekxBaDhUSDVUT2EwTDJ3cno1c2p6QVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQjRpb1hjN3JMNApvQ1VpbUtZdGNORHhyTzJ4Qk83cm9aUUZMU1FoRlJLeFBtSU1OUXpzM3ZqU21ndDZ0Tk5la21IL0dRZGZ3cS85CkVxREljb1VyeE1GZWhvcklwWVJKUGFPWmQrc1lpVHNvR2xRbzg5SWNuSnVEVXo5d1RGK0hjcEt1Y09qdUJoRFUKckZrS2x6QW1Qc2xGT1ZaU3dpekpUR1RvZGdicDd6MDNpQmNhcUlyVDN1WFdaM05lblFXOUZZTEllU0NFYTFvMQpEMmtlRml0T1RoSStPQldTa3liaHhkV3FPTUF5ejdaRzlkVWltOXZPdkVKM1YvazUrUXNCL0pKVEFZQ0JpMlFZCm1icGZpQll4M2V1L0gwWnpybmVVZ3Y4TVVRbmxhT2cwbWkxV3BadVFLamRPTW1hYTlWU2ZFL3l3N1Z2YzRwTW8KdVowWlVzRnZFR1hhCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://DA91D76E554184062BC222D6E7863452.gr7.us-west-2.eks.amazonaws.com
+  name: arn:aws:eks:us-west-2:333190514293:cluster/sensei-eks04-prod-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:us-west-2:333190514293:cluster/sensei-eks04-prod-cluster
+    namespace: runai-sensei-platform-p4d
+    user: runai-authenticated-user
+  name: arn:aws:eks:us-west-2:333190514293:cluster/sensei-eks04-prod-cluster
+current-context: arn:aws:eks:us-west-2:333190514293:cluster/sensei-eks04-prod-cluster
+kind: Config
+preferences: {}
+users:
+- name: runai-authenticated-user
+  user:
+    auth-provider:
+      config:
+        airgapped: "true"
+        auth-flow: remote-browser
+        client-id: runai-cli
+        idp-issuer-url: https://app-ic.run.ai/auth/realms/adobesensei
+        realm: adobesensei
+        redirect-uri: https://adobesensei.run.ai/oauth-code
+      name: oidc
