@@ -194,3 +194,6 @@ alias runai_project="runai config project"
 alias runai_3dgen="runai config project g3i-3dgentech"
 
 
+. /usr/share/autojump/autojump.sh
+
+
