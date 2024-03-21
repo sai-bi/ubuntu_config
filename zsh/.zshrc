@@ -126,6 +126,7 @@ function print_runai_env() {
     echo "JACK_ID: ${JACK_ID}"
     echo "DOCKER: ${DOCKER}"
     echo "PROJ_NAME: ${PROJ_NAME}"
+    echo "ACTIV_TYPE: ${ACTIV_TYPE}"
 }
 
 
@@ -136,6 +137,7 @@ function use_eks01() {
     export JACK_ID=5684
     export DOCKER=docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/runai/clio-base-beta:0.19
     export PROJ_NAME=g3i-3dgentech
+    export ACTIV_TYPE=productization
 
     print_runai_env
 }
@@ -147,6 +149,7 @@ function use_eks02() {
     export JACK_ID=5684
     export DOCKER=docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/runai/clio-base-beta:0.19
     export PROJ_NAME=g3i-3dgentech
+    export ACTIV_TYPE=productization
 
     print_runai_env
 
@@ -159,6 +162,7 @@ function use_eks03() {
     export JACK_ID=5684
     export DOCKER=docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/kineto:0.0.15-h100-test6
     export PROJ_NAME=g3i-3dgentech
+    export ACTIV_TYPE=productization
 
     print_runai_env
 
@@ -171,6 +175,7 @@ function use_eks04() {
     export JACK_ID=5684
     export DOCKER=docker-matrix-experiments-snapshot.dr-uw2.adobeitc.com/runai/clio-base-beta:0.19
     export PROJ_NAME=g3i-3dgentech
+    export ACTIV_TYPE=productization
 
     print_runai_env
 
